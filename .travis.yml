@@ -13,6 +13,6 @@ install:
  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 after_success:
-   - docker build -t lilachaimo/docker-k8s-hello-world .
+   - docker build -t lilachyonash/docker-k8s-hello-world .
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
    - docker push lilachyonash/docker-k8s-hello-world .
