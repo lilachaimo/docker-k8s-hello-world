@@ -1,6 +1,6 @@
 sudo: required
 language: java
-jdk: openjdk11
+jdk: openjdk13
 
 services:
  - docker
@@ -9,7 +9,7 @@ services:
 # - docker build -t lilachyonash/react-test -f ./client/Dockerfile.dev ./client
  
 script:
-- ./mvnw clean install -B
+ - ./mvnw clean install -B
 
 after_success:
    - docker build -t lilachyonash/docker-k8s-hello-world .
