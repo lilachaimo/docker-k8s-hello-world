@@ -15,5 +15,4 @@ install:
 after_success:
    - docker build -t lilachaimo/docker-k8s-hello-world .
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-   - docker tag lilachyonash/docker-k8s-hello-world:7 lilachyonash/docker-k8s-hello-world:latest
    - docker push lilachyonash/docker-k8s-hello-world .
