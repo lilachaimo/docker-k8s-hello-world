@@ -1,6 +1,6 @@
-FROM adoptopenjdk/openjdk13:alpine-jre
-RUN addgroup -S spring && adduser -S spring -G spring
-USER spring:spring
-ARG JAR_FILE=target/*.jar
-WORKDIR /opt/app
-ENTRYPOINT ["java","-jar","/docker-k8s-hello-world.jar"] 
+
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
